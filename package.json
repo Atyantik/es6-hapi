@@ -1,0 +1,59 @@
+{
+  "name": "es6-hapi",
+  "version": "0.0.1",
+  "description": "Simple Deployable API",
+  "engines": {
+    "node": ">= 7.9.0"
+  },
+  "engineStrict": true,
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-istanbul": "^4.1.1",
+    "babel-plugin-lodash": "^3.2.11",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.3.3",
+    "babel-register": "^6.24.1",
+    "chai": "^3.5.0",
+    "clean-webpack-plugin": "^0.1.16",
+    "copy-webpack-plugin": "^4.0.1",
+    "eslint": "^3.19.0",
+    "file-loader": "^0.11.1",
+    "hapi": "^16.1.1",
+    "hapi-auth-jwt2": "^7.2.4",
+    "hapi-swagger": "^7.7.0",
+    "hapi-test": "^5.1.0",
+    "html-loader": "^0.4.5",
+    "inert": "^4.2.0",
+    "joi": "^10.4.1",
+    "json-loader": "^0.5.4",
+    "jsonwebtoken": "^7.4.0",
+    "lodash": "^4.17.4",
+    "mocha": "^3.3.0",
+    "nodemon": "^1.11.0",
+    "nyc": "^10.2.0",
+    "uglify-js": "git://github.com/mishoo/UglifyJS2.git#harmony",
+    "uglifyjs-webpack-plugin": "^0.4.3",
+    "url-loader": "^0.5.8",
+    "vision": "^4.1.1",
+    "webpack": "^2.3.3"
+  },
+  "scripts": {
+    "start": "nodemon --watch src bin/babelify.js ./src/server.js",
+    "build": "NODE_ENV=production webpack -p --config ./webpack.config.babel.js",
+    "test": "mocha \"test/**/*.test.js\" --require bin/babelify.js --compilers js:babel-register --require babel-polyfill",
+    "coverage": "nyc mocha \"test/**/*.test.js\" --require bin/babelify.js --compilers js:babel-register --require babel-polyfill"
+  },
+  "keywords": [
+    "es6",
+    "es7",
+    "nodejs",
+    "swagger",
+    "babel",
+    "api",
+    "deployable"
+  ],
+  "author": "Atyantik Technologies",
+  "license": "ISC"
+}
